@@ -1,29 +1,58 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #E7E8D1;
     margin: 0;
     padding: 0;
 }
 
-.wrapper {
-    max-width: 1200px; /* Set a max width for larger screens */
-    margin: 0 auto;
-    padding: 0 20px; /* Add padding for smaller screens */
+.wrapper { 
+    max-width: 100%;
+    margin: 0;
+    padding: 0; /* Add padding for smaller screens */
 }
 
 header {
     background-color: #B85042; /* Warm red header */
-    color: white;
-    text-align: center;
-    padding: 10px 0; /* Reduced padding for a shorter header */
+    text-align: left;
+    padding: 10px 20px; /* Reduced padding for a shorter header */
     position: sticky; /* Sticky header */
     top: 0; /* Stick to the top */
     z-index: 1000; /* Ensure it stays above other content */
+    margin: 0;
 }
 
 h1 {
     font-size: 2.5em; /* Slightly smaller */
     margin: 0;
+    padding-left: 20px;
+    text-align: left;
+}
+
+@font-face {
+    font-family: 'Moontime';
+    src: url('fonts/MoonTime-Regular.ttf') format('truetype'); /* Adjust path as necessary */
+    font-weight: normal;
+    font-style: normal;
+}
+
+.moontime {
+    font-family: 'Moontime', cursive; /* Apply the Moontime font */
+    font-size: 3em; /* Adjust size as needed */
+    color: #E7E8D1; /* Optional: set color */
+    margin: 0; /* Remove default margin */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+
+.subhead {
+    font-size: 1em; /* Slightly smaller */
+    color: #E7E8D1; /* Soft green for the subheading */
+    margin: 10px 0 15px; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+    border: none; /* Ensure there's no border */
+    padding-left: 20px;
+    text-align: left;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 h2 {
@@ -32,11 +61,15 @@ h2 {
     margin: 10px 0 15px; /* Remove any margin */
     padding: 0; /* Remove any padding */
     border: none; /* Ensure there's no border */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    margin-left: -50px;
 }
 
 .contact-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Default to column for smaller screens */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
     background-color: #E7E8D1; /* Light beige for the form background */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -45,8 +78,9 @@ h2 {
 }
 
 .contact-left {
-    flex: 1;
-    padding: 20px;
+    flex: 1.5;
+    padding-right: 50px;
+    padding-left: 50px;
 }
 
 .contact-left hr {
@@ -95,6 +129,7 @@ button {
     border-radius: 5px;
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%; /* Full width button */
 }
 
@@ -107,7 +142,10 @@ button:hover {
 }
 
 .contact-right {
-    display: none; /* Hidden by default */
+    display: flex; /* Show image container */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-top: 20px; /* Space from the form */
 }
 
 .contact-right img {
@@ -138,19 +176,20 @@ footer {
 @media (min-width: 600px) {
     .contact-container {
         flex-direction: row; /* Two-column layout on larger screens */
+        align-items: center; /* Center items vertically */
     }
 
     .contact-left {
-        flex: 2; /* Takes up more space */
-        padding-right: 20px;
+        flex: 1.5; /* Take less space */
+        padding-right: 10px; /* Reduced padding on the right */
     }
 
     .contact-right {
-        flex: 1; /* Right side image */
-        display: block; /* Show the image */
-        padding-left: 20px;
+        flex: 2; /* Give more space to the image */
+        margin-top: 0; /* Remove top margin on larger screens */
     }
 }
+
 
 @media (max-width: 599px) {
     h1 {
@@ -159,10 +198,6 @@ footer {
 
     h2 {
         font-size: 1.2em;
-    }
-
-    .contact-right {
-        display: none; /* Hide image on smaller screens */
     }
 }
 
