@@ -1,0 +1,185 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    max-width: 1200px; /* Set a max width for larger screens */
+    margin: 0 auto;
+    padding: 0 20px; /* Add padding for smaller screens */
+}
+
+header {
+    background-color: #B85042; /* Warm red header */
+    color: white;
+    text-align: center;
+    padding: 10px 0; /* Reduced padding for a shorter header */
+    position: sticky; /* Sticky header */
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+h1 {
+    font-size: 2.5em; /* Slightly smaller */
+    margin: 0;
+}
+
+h2 {
+    font-size: 2em; /* Slightly smaller */
+    color: #A7BEAE; /* Soft green for the subheading */
+    margin: 10px 0 15px; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+    border: none; /* Ensure there's no border */
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #E7E8D1; /* Light beige for the form background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Space from header */
+    overflow: hidden; /* Prevents inner elements from causing overflow */
+}
+
+.contact-left {
+    flex: 1;
+    padding: 20px;
+}
+
+.contact-left hr {
+    border: none; /* Remove default border */
+    height: 1px; /* Height of the line */
+    background-color: transparent; /* Ensure no color is applied */
+    margin: 20px 0; /* Optional: spacing above and below */
+}
+
+.contact-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #B85042; /* Warm red for borders */
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-input::placeholder {
+    font-size: 1em; /* Match the font size */
+    color: #B85042; /* Optional: change color */
+}
+
+textarea::placeholder {
+    font-size: 1em; /* Ensure textarea placeholder matches */
+    color: #B85042; /* Optional: change color */
+}
+
+.contact-input:focus {
+    border-color: #A7BEAE; /* Soft green for focus border */
+    outline: none;
+}
+
+textarea {
+    font-size: 1em;
+    height: 100px;
+}
+
+button {
+    background-color: #B85042; /* Warm red button */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    width: 100%; /* Full width button */
+}
+
+button img {
+    margin-left: 8px;
+}
+
+button:hover {
+    background-color: #A7BEAE; /* Soft green on hover */
+}
+
+.contact-right {
+    display: none; /* Hidden by default */
+}
+
+.contact-right img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px 0;
+    background-color: #A7BEAE; /* Soft green footer */
+}
+
+.social-media a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #B85042; /* Warm red for links */
+}
+
+.privacy-policy {
+    display: block;
+    margin-top: 10px;
+    color: #B85042; /* Warm red for privacy policy text */
+}
+
+/* Responsive Styles */
+@media (min-width: 600px) {
+    .contact-container {
+        flex-direction: row; /* Two-column layout on larger screens */
+    }
+
+    .contact-left {
+        flex: 2; /* Takes up more space */
+        padding-right: 20px;
+    }
+
+    .contact-right {
+        flex: 1; /* Right side image */
+        display: block; /* Show the image */
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 599px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .contact-right {
+        display: none; /* Hide image on smaller screens */
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    .contact-input {
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px;
+    }
+}

@@ -3,11 +3,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-    <div class="contact-container">
-        <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+    <div class="wrapper">
+    <header>
+        <h1>Safari Utah</h1>
+        <h2>wilder than you think</h2>
+    </header>
+    <div class="contact-container content">
+        <!-- <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
             <div class="contact-left">
                 <h2>Get In Touch</h2>
                 <hr>
@@ -17,11 +22,36 @@
             <input type="email" name="email" placeholder="Your Email" class="contact-input" required>
             <textarea name="message" placeholder="Your Message" class="contact-input" required ></textarea>
             <button type="submit">Submit <img src="assets/arrow_icon.png" alt=""></button>
+        </form> -->
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+            <div class="contact-left">
+                <h2>Get In Touch</h2>
+                <hr>
+            </div>
+            <input type="hidden" name="access_key" value="62addfbd-2462-4521-b1bc-d57cbc432911">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" class="contact-input" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" class="contact-input" required>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your Message" class="contact-input" required></textarea>
+            <button type="submit">Submit <img src="assets/arrow_icon.png" alt="Submit"></button>
         </form>
         <div class="contact-right">
             <img src="assets/right_img.png" alt="">
         </div>
     </div>
-    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Safari Utah. All rights reserved.</p>
+            <div class="social-media">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+            <a href="#" class="privacy-policy">Privacy Policy</a>
+        </div>
+    </footer>
+</div>
 </body>
 </html>
