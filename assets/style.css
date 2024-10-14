@@ -174,7 +174,8 @@ h2.contact-title {
 
 .contact-left {
     flex: 1;
-    padding: 0 0 0 50px; /* Padding for left and right */
+    padding: 0 50px; 
+    margin: 0 auto;
 }
 
 .contact-input, textarea {
@@ -236,11 +237,14 @@ button {
     }
     
     .contact-left {
-        flex: 1; /* Full width for the form */
+        width: 100%; /* Ensure full width */
+        padding: 20px; /* Add padding */
+        margin: 0; /* Remove margin */
     }
 
     .contact-container {
         flex-direction: column; /* Stack items vertically */
+        align-items: center;
     }
 }
 
@@ -312,6 +316,96 @@ section p {
     text-decoration: none;
     color: #B85042; /* Match the brand color */
 }
+
+.section-content {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin: 20px 0; /* Space between sections */
+}
+
+.section-image {
+    max-width: 200px; /* Set a max width for images */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 20px; /* Space around the image */
+}
+
+.section-text {
+    flex: 1; /* Allow text section to take available space */
+}
+
+/* Carousel styles */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 100%;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center; /* Center images horizontally */
+    align-items: center; /* Center images vertically */
+    position: relative; /* Necessary for absolute positioning of buttons */
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    overflow: hidden; /* Prevent overflow if images are larger */
+}
+
+.image-container img {
+    max-width: 80%; /* Set a max width (change as needed) */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure no space below images */
+    margin: 0 auto; /* Center the image in its container */
+}
+
+.image-container.active {
+    display: block; /* Only active image is displayed */
+}
+
+/* Button styles */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: #885042;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+}
+
+.prev {
+    left: 10px;
+}
+.next {
+    right: 10px;
+}
+
+.prev::before,
+.next::after {
+    content: ''; /* Empty content for pseudo-elements */
+    display: block; /* Make them block elements */
+    width: 100%; /* Full width of the button */
+    height: 100%; /* Full height of the button */
+}
+
+.prev::before {
+    content: ''; /* Left arrow */
+    position: absolute;
+    left: 0; /* Align to left */
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+}
+
 
 /* Optional: Add some responsiveness for smaller screens */
 @media (max-width: 600px) {

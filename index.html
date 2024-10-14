@@ -44,12 +44,15 @@
                 <button type="submit">Submit <img src="./assets/images/arrow_icon.png" alt="Submit"></button>
             </form>
             <div class="contact-right">
-                <img src="./assets/images/Logo.png" alt="">
+                <img src="./assets/images/Logo.png" alt="Safari Utah Logo">
             </div>
         </div>
         <section id="what-we-do">
             <h2>What We Do</h2>
-            <h3>Discover Antelope Island:</h3>
+            <div class="section-content">
+                <img src="./assets/images/Me Taking a Photo.jpg" alt="Looking over the grassland" class="section-image">
+                <div class="section-text">
+                <h3>Discover Antelope Island:</h3>
             <p>3-Hour Wildlife and Ecology Tour</p>
             <p>
                 Join us for a 3-hour adventure on Antelope Island in the Great Salt Lake, enjoying stunning landscapes and diverse wildlife. Perfect for nature enthusiasts, bird watchers, and photographers, the tour offers a dive into the island’s ecosystems.
@@ -78,10 +81,14 @@
             </ol>
             <p>Adventure Awaits!</p>
             <a href="#top" class="to-top">To Top</a>
+            </div>
+            </div>
         </section>
         
         <section id="who-we-are">
             <h2>Who We Are</h2>
+            <div class="section-content">
+                <div class="section-text">
             <h3>Our Journey: A Passion for Nature and Conservation</h3>
             <p>
                 Nature and wildlife have been at the center of our lives long before we met. Our paths crossed on the beautiful island of Sri Lanka, where we volunteered to rehabilitate wild turtles. It was here that we bonded over our shared love for nature and our commitment to conservation.
@@ -99,11 +106,46 @@
                 Join us as we explore and celebrate the beauty of the natural world together!
             </p>
             <a href="#top" class="to-top">To Top</a>
+        </div>
+        <img src="./assets/images/Guiding in Africa.JPG" alt="Photo of us as African Safari Guides" class="section-image">
+    </div>
         </section>
         
         <section id="photo-gallery">
             <h2>Photo Gallery</h2>
-            <!-- Content here -->
+            <div class="carousel">
+                <button class="prev">&#10094;</button>
+                <div class="carousel-images">
+                    <div class="image-container active">
+                    <img src="./assets/images/Bison Washout - 8X10.jpg" alt="Gallery Image">
+                    </div>
+                    <div class="image-container">
+                    <img src="./assets/images/Bison Family.jpeg" alt="Gallery Image">
+                    </div>
+                    <div class="image-container">
+                    <img src="./assets/images/Burrowing Owl on Sage.jpeg" alt="Gallery Image">
+                    </div>
+                    <div class="image-container">
+                    <img src="./assets/images/Strolling Down the Road.jpeg" alt="Gallery Image">
+                    </div>
+                    <div class="image-container">
+                    <img src="./assets/images/Coyote on Flats.jpeg" alt="Gallery Image">
+                    </div>
+                    <div class="image-container">
+                    <img src="./assets/images/Bison in Sea of Grass.jpeg" alt="Gallery Image">
+                    </div>
+                    <div class="image-container">
+                    <img src="./assets/images/Bison in Snow.JPG" alt="Gallery Image">
+                    </div>
+                    <div class="image-container">
+                    <img src="./assets/images/Burrowing Owl.jpeg" alt="Gallery Image">
+                    </div>
+                    <div class="image-container">
+                    <img src="./assets/images/Gopher Snake.JPG" alt="Gallery Image">
+                    </div>
+                </div>
+                <button class="next">&#10095;</button>
+            </div>
             <a href="#top" class="to-top">To Top</a>
         </section>
 
@@ -120,22 +162,6 @@
         </footer>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const navLinks = document.querySelectorAll('.navigation a');
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    document.querySelector(targetId).scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                });
-            });
-        });
-    </script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const navLinks = document.querySelectorAll('.navigation a');
@@ -160,6 +186,29 @@
             });
         });
     </script>
-    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const carouselImages = document.querySelector('.carousel-images');
+            const imageContainers = document.querySelectorAll('.image-container');
+            const prevButton = document.querySelector('.prev');
+            const nextButton = document.querySelector('.next');
+            let currentIndex = 0;
+
+            function showImage(index) {
+                imageContainers.forEach((container, i) => {
+                    container.classList.remove('active');
+                    container.style.display = 'none'; // Hide all images
+                });
+                currentIndex = (index + imageContainers.length) % imageContainers.length;
+                imageContainers[currentIndex].classList.add('active');
+                imageContainers[currentIndex].style.display = 'block'; // Show active image
+            }
+
+            nextButton.addEventListener('click', () => showImage(currentIndex + 1));
+            prevButton.addEventListener('click', () => showImage(currentIndex - 1));
+
+            showImage(currentIndex); // Show the first image initially
+        });
+    </script>
 </body>
 </html>
