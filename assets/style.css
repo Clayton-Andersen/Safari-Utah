@@ -8,144 +8,191 @@ body {
 .wrapper { 
     max-width: 100%;
     margin: 0;
-    padding: 0; /* Add padding for smaller screens */
+    padding: 0;
 }
 
 header {
-    background-color: #B85042; /* Warm red header */
-    text-align: left;
-    padding: 10px 20px; /* Reduced padding for a shorter header */
-    position: sticky; /* Sticky header */
-    top: 0; /* Stick to the top */
-    z-index: 1000; /* Ensure it stays above other content */
-    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #B85042;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    width: 100%;
 }
 
 h1 {
-    font-size: 2.5em; /* Slightly smaller */
+    font-size: 2.5em; /* Default size */
     margin: 0;
-    padding-left: 20px;
     text-align: left;
+    padding-left: 50px;
+    padding-right: 20px;
+    font-family: 'Brettley'; 
+    color: #E7E8D1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 @font-face {
-    font-family: 'Moontime';
-    src: url('fonts/MoonTime-Regular.ttf') format('truetype'); /* Adjust path as necessary */
+    font-family: 'Brettley';
+    src: url('../fonts/MoonTime-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
-.moontime {
-    font-family: 'Moontime', cursive; /* Apply the Moontime font */
-    font-size: 3em; /* Adjust size as needed */
-    color: #E7E8D1; /* Optional: set color */
-    margin: 0; /* Remove default margin */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
-}
-
 .subhead {
-    font-size: 1em; /* Slightly smaller */
-    color: #E7E8D1; /* Soft green for the subheading */
-    margin: 10px 0 15px; /* Remove any margin */
-    padding: 0; /* Remove any padding */
-    border: none; /* Ensure there's no border */
-    padding-left: 20px;
-    text-align: left;
+    font-size: 1em;
+    color: #E7E8D1;
+    margin: 5px 0 5px;
+    padding-left: 50px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-h2 {
-    font-size: 2em; /* Slightly smaller */
-    color: #A7BEAE; /* Soft green for the subheading */
-    margin: 10px 0 15px; /* Remove any margin */
-    padding: 0; /* Remove any padding */
-    border: none; /* Ensure there's no border */
+h2.contact-title {
+    align-items: center; 
+    font-size: 2.25em;
+    color: #A7BEAE;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-    margin-left: -50px;
 }
 
+.navigation {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.navigation ul {
+    list-style: none;
+    padding-right: 50px;
+    display: flex;
+    gap: 20px;
+}
+
+.navigation a {
+    text-decoration: solid;
+    font-size: 1.15em;
+    color: #E7E8D1;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 20px;
+    padding: 10px;
+}
+
+.hamburger div {
+    height: 4px;
+    width: 30px;
+    background: #E7E8D1;
+    margin: 4px 0;
+}
+
+/* Show hamburger on small screens */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.75em; /* Adjust size for small screens */
+        padding-left: 40px; /* Adjust padding */
+        padding-right: 40px;
+        flex: 1; /* Allow to take more space */
+    }
+    .subhead {
+        font-size: 0.8em;
+        padding-left: 40px;
+    }
+    .navigation {
+        display: none; /* Hide the nav links */
+    }
+
+    .hamburger {
+        display: flex; /* Show the hamburger icon */
+    }
+    
+    .nav-active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background: #B85042;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+}
+
+/* Contact container styles */
 .contact-container {
     display: flex;
-    flex-direction: column; /* Default to column for smaller screens */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    background-color: #E7E8D1; /* Light beige for the form background */
-    border-radius: 8px; /* Rounded corners */
+    justify-content: space-between;
+    max-width: 10000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #E7E8D1;
+    border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px; /* Space from header */
-    overflow: hidden; /* Prevents inner elements from causing overflow */
 }
 
 .contact-left {
-    flex: 1.5;
-    padding-right: 50px;
-    padding-left: 50px;
+    flex: 1;
+    padding: 0 50px; /* Padding for left and right */
 }
 
-.contact-left hr {
-    border: none; /* Remove default border */
-    height: 1px; /* Height of the line */
-    background-color: transparent; /* Ensure no color is applied */
-    margin: 20px 0; /* Optional: spacing above and below */
-}
-
-.contact-input {
+.contact-input, textarea {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid #B85042; /* Warm red for borders */
+    border: 1px solid #B85042;
     border-radius: 5px;
     font-size: 1em;
 }
 
-.contact-input::placeholder {
-    font-size: 1em; /* Match the font size */
-    color: #B85042; /* Optional: change color */
-}
-
-textarea::placeholder {
-    font-size: 1em; /* Ensure textarea placeholder matches */
-    color: #B85042; /* Optional: change color */
-}
-
-.contact-input:focus {
-    border-color: #A7BEAE; /* Soft green for focus border */
-    outline: none;
-}
-
 textarea {
     font-size: 1em;
-    height: 100px;
+    height: 150px; /* Increased height for more room */
+    resize: vertical; /* Allows users to resize the textarea vertically */
+    padding: 10px; /* Ensure consistent padding */
+    border: 1px solid #B85042; /* Match the input fields */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.contact-input:focus, textarea:focus {
+    border-color: #A7BEAE;
+    outline: none;
+    box-shadow: 0 0 5px rgba(167, 190, 174, 0.5);
 }
 
 button {
-    background-color: #B85042; /* Warm red button */
+    background-color: #B85042;
     color: white;
     border: none;
     padding: 10px 15px;
     font-size: 1em;
     cursor: pointer;
     border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%; /* Full width button */
-}
-
-button img {
-    margin-left: 8px;
-}
-
-button:hover {
-    background-color: #A7BEAE; /* Soft green on hover */
+    display: block;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .contact-right {
-    display: flex; /* Show image container */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    margin-top: 20px; /* Space from the form */
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 .contact-right img {
@@ -153,68 +200,79 @@ button:hover {
     height: auto;
 }
 
+/* Hide image on small screens */
+@media (max-width: 600px) {
+    .contact-right {
+        display: none; /* Hide the image on small screens */
+    }
+    
+    .contact-left {
+        flex: 1; /* Full width for the form */
+    }
+
+    .contact-container {
+        flex-direction: column; /* Stack items vertically */
+    }
+}
+
+@media (max-width: 768px) {
+    .navigation a {
+        font-size: 0.9em; /* Slightly smaller font size */
+    }
+    
+    .navigation ul {
+        gap: 10px; /* Reduce gap between nav items */
+    }
+}
+
+/* Section Styles */
+section {
+    padding: 40px 20px; /* Add padding to create space */
+    background-color: #E7E8D1; /* Match background color of the body */
+    border-radius: 8px; /* Rounded corners for a cohesive look */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px 0; /* Margin between sections */
+}
+
+section h2 {
+    font-size: 2em; /* Increase the size of section headings */
+    color: #B85042; /* Match the header color */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for text */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+section p {
+    font-size: 1.1em; /* Slightly larger text for readability */
+    color: #333; /* Darker color for contrast */
+    line-height: 1.5; /* Increase line height for better readability */
+}
+
+/* Optional: Add some responsiveness for smaller screens */
+@media (max-width: 600px) {
+    section h2 {
+        font-size: 1.5em; /* Smaller heading on mobile */
+    }
+
+    section p {
+        font-size: 1em; /* Smaller paragraph text on mobile */
+    }
+}
+
 footer {
     text-align: center;
     margin-top: 20px;
     padding: 20px 0;
-    background-color: #A7BEAE; /* Soft green footer */
+    background-color: #A7BEAE;
 }
 
 .social-media a {
     margin: 0 10px;
     text-decoration: none;
-    color: #B85042; /* Warm red for links */
+    color: #B85042;
 }
 
 .privacy-policy {
     display: block;
     margin-top: 10px;
-    color: #B85042; /* Warm red for privacy policy text */
-}
-
-/* Responsive Styles */
-@media (min-width: 600px) {
-    .contact-container {
-        flex-direction: row; /* Two-column layout on larger screens */
-        align-items: center; /* Center items vertically */
-    }
-
-    .contact-left {
-        flex: 1.5; /* Take less space */
-        padding-right: 10px; /* Reduced padding on the right */
-    }
-
-    .contact-right {
-        flex: 2; /* Give more space to the image */
-        margin-top: 0; /* Remove top margin on larger screens */
-    }
-}
-
-
-@media (max-width: 599px) {
-    h1 {
-        font-size: 2em;
-    }
-
-    h2 {
-        font-size: 1.2em;
-    }
-}
-
-@media (max-width: 400px) {
-    h1 {
-        font-size: 1.8em;
-    }
-
-    h2 {
-        font-size: 1em;
-    }
-
-    .contact-input {
-        padding: 8px;
-    }
-
-    button {
-        padding: 8px;
-    }
+    color: #B85042;
 }
