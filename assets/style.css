@@ -310,6 +310,16 @@ section p {
     margin: 0 0 15px 20px; /* Indent ordered list */
 }
 
+#photo-gallery {
+    scroll-margin-top: 70px; /* Adjust this value based on your header height */
+    padding: 20px; /* Maintain existing padding */
+    background-color: #E7E8D1; /* Keep the same background color */
+    border-radius: 8px; /* Maintain rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Keep shadow effect */
+    margin: 20px auto; /* Center the section */
+    max-width: 100%; /* Ensure full width */
+}
+
 .to-top {
     display: inline-block;
     margin-top: 20px;
@@ -324,7 +334,7 @@ section p {
 }
 
 .section-image {
-    max-width: 200px; /* Set a max width for images */
+    max-width: 600px; /* Set a max width for images */
     height: auto; /* Maintain aspect ratio */
     margin: 0 20px; /* Space around the image */
 }
@@ -344,7 +354,8 @@ section p {
 .carousel-images {
     display: flex;
     transition: transform 0.5s ease;
-    height: 100%;
+    height: 80%;
+    justify-content: center;
 }
 
 .image-container {
@@ -352,13 +363,13 @@ section p {
     justify-content: center; /* Center images horizontally */
     align-items: center; /* Center images vertically */
     position: relative; /* Necessary for absolute positioning of buttons */
-    width: 100vw; /* Full width of the viewport */
-    height: 100vh; /* Full height of the viewport */
+    width: 80vw; /* Full width of the viewport */
+    height: 80vh; /* Full height of the viewport */
     overflow: hidden; /* Prevent overflow if images are larger */
 }
 
 .image-container img {
-    max-width: 80%; /* Set a max width (change as needed) */
+    max-width: 60%; /* Set a max width (change as needed) */
     height: auto; /* Maintain aspect ratio */
     display: block; /* Ensure no space below images */
     margin: 0 auto; /* Center the image in its container */
@@ -406,6 +417,33 @@ section p {
     transform: translateY(-50%); /* Center vertically */
 }
 
+@media (max-width: 768px) {
+    .section-content {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .section-image {
+        max-width: 100%; /* Full width on small screens */
+        margin: 0 0 20px 0; /* Remove side margins, add bottom margin */
+    }
+
+    .section-text {
+        padding: 0 20px; /* Add some padding for text */
+    }
+
+    h2 {
+        font-size: 1.75em; /* Adjust heading size for small screens */
+    }
+
+    h3 {
+        font-size: 1.5em; /* Adjust subheading size */
+    }
+
+    p {
+        font-size: 1em; /* Adjust paragraph size */
+    }
+}
 
 /* Optional: Add some responsiveness for smaller screens */
 @media (max-width: 600px) {
@@ -444,5 +482,5 @@ footer {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
-    max-width: 800px;
+    max-width: 100%;
 }
