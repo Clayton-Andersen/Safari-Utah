@@ -29,20 +29,47 @@ header {
 
 h1 {
     font-size: 2.5em; /* Default size */
+    font-weight: 300;
     margin: 0;
     text-align: left;
     padding-left: 50px;
     padding-right: 20px;
-    font-family: 'Brettley'; 
+    font-family: 'Moontime'; 
     color: #E7E8D1;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+h1 a {
+    color: inherit; /* Keeps the color of the h1 */
+    text-decoration: underline; /* Removes underline */
 }
 
 @font-face {
-    font-family: 'Brettley';
+    font-family: 'Moontime';
     src: url('../fonts/MoonTime-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'BodoniModa';
+    src: url('../fonts/BodoniModa-VariableFont_opsz\,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.standard-font {
+    font-family: 'BodoniModa'; /* or whichever standard font you prefer */
+    font-weight: normal; /* Adjust weight if necessary */
+    font-size: inherit; /* Keep the same size as the h1 */
+    color: inherit; /* Keep the same color as the h1 */
+}
+
+.no-underline {
+    text-decoration: none; /* Remove underline from the anchor */
+}
+
+h1.moontime {
+    text-decoration: underline; /* Apply underline to the whole h1 */
 }
 
 .subhead {
@@ -55,7 +82,7 @@ h1 {
 
 h2.contact-title {
     align-items: center; 
-    font-size: 2.25em;
+    font-size: 2em;
     color: #A7BEAE;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
@@ -70,12 +97,12 @@ h2.contact-title {
     list-style: none;
     padding-right: 50px;
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 .navigation a {
     text-decoration: solid;
-    font-size: 1.15em;
+    font-size: 1em;
     color: #E7E8D1;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
@@ -138,7 +165,7 @@ h2.contact-title {
     display: flex;
     justify-content: space-between;
     max-width: 10000px;
-    margin: 20px auto;
+    margin: auto;
     padding: 20px;
     background-color: #E7E8D1;
     border-radius: 8px;
@@ -147,7 +174,7 @@ h2.contact-title {
 
 .contact-left {
     flex: 1;
-    padding: 0 50px; /* Padding for left and right */
+    padding: 0 0 0 50px; /* Padding for left and right */
 }
 
 .contact-input, textarea {
@@ -155,6 +182,7 @@ h2.contact-title {
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #B85042;
+    box-sizing: border-box;
     border-radius: 5px;
     font-size: 1em;
 }
@@ -178,13 +206,14 @@ button {
     background-color: #B85042;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 10px;
     font-size: 1em;
     cursor: pointer;
     border-radius: 5px;
     display: block;
     width: 100%;
     margin-top: 10px;
+    box-sizing: border-box;
 }
 
 .contact-right {
@@ -247,6 +276,43 @@ section p {
     line-height: 1.5; /* Increase line height for better readability */
 }
 
+#what-we-do, #who-we-are {
+    padding: 20px; /* Space around the section */
+    background-color: #E7E8D1; /* Light background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 20px auto; /* Center the section with margin */
+    max-width: 800px; /* Limit the width for readability */
+}
+
+#what-we-do h2, #who-we-are h2 {
+    color: #B85042; /* Your brand color */
+    margin-bottom: 15px; /* Space below the heading */
+}
+
+#what-we-do h3, #who-we-are h3 {
+    color: #A7BEAE; /* Secondary color for subheadings */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    margin-top: 15px; /* Space above subheadings */
+}
+
+#what-we-do p, #who-we-are p {
+    line-height: 1.6; /* Improved readability */
+    margin-bottom: 15px; /* Space between paragraphs */
+    color: #333; /* Darker text for better contrast */
+}
+
+#what-we-do ol {
+    margin: 0 0 15px 20px; /* Indent ordered list */
+}
+
+.to-top {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #B85042; /* Match the brand color */
+}
+
 /* Optional: Add some responsiveness for smaller screens */
 @media (max-width: 600px) {
     section h2 {
@@ -275,4 +341,14 @@ footer {
     display: block;
     margin-top: 10px;
     color: #B85042;
+}
+
+#what-we-do, #who-we-are {
+    scroll-margin-top: 70px; /* Adjust based on your header height */
+    padding: 20px; /* Maintain existing padding */
+    background-color: #E7E8D1;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
 }
