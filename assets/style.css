@@ -83,7 +83,7 @@ h1.moontime {
 h2.contact-title {
     align-items: center; 
     font-size: 2em;
-    color: #A7BEAE;
+    color: #111311;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -295,7 +295,7 @@ section p {
 }
 
 #what-we-do h3, #who-we-are h3 {
-    color: #A7BEAE; /* Secondary color for subheadings */
+    color: #0a0a0a; /* Secondary color for subheadings */
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     margin-top: 15px; /* Space above subheadings */
 }
